@@ -1,0 +1,14 @@
+name: build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    uses: giyomoon/workflows/.github/workflows/docker-build.yml@main
+    with:
+      images: ghcr.io/giyomoon/restic
+      platforms: linux/amd64,linux/arm64
+      lint: false
